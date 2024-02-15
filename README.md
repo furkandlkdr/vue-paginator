@@ -12,3 +12,15 @@ Vue.js ile tasarladığım bu Paginator Component'ini istediğiniz projeye dahil
 Data yerine istediğiniz veriyi verip, kullanacağınız veri tipine göre HTML yazıp, CSS'i düzelterek kendinize uygun hale getirebilirsiniz. 
 Paginator sizin için *veriniz Array olduğu sürece* sayfa sayısını hesaplayacak, istediğiniz kadar ürünü ekrana getirecek ve Array'deki index sırasına göre sıralayacaktır.
 Kullanırken verinizin **Id** sini HTML kısmındaki Id sütununun altındaki index ile yer değiştirmeniz gerekiyor.
+
+## Paginator First Page
+![image](https://github.com/furkandlkdr/vue-paginator/assets/115067547/50f8ecff-9930-4b52-90db-1f0464851864)
+
+## Paginator Last Page
+![image](https://github.com/furkandlkdr/vue-paginator/assets/115067547/5196c36f-9fff-407b-8d5e-8d1d9758b646)
+
+## Paginator Change ItemPerPage
+![image](https://github.com/furkandlkdr/vue-paginator/assets/115067547/c30fc73f-10bb-4983-8202-e9839340201a)
+
+## Paginator Page is full with items
+![image](https://github.com/furkandlkdr/vue-paginator/assets/115067547/3f7687cc-9d3a-46c3-b2ac-587ed02c03cd)
