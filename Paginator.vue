@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="data-grid">
-      <div class="data-row"> 
+      <div class="data-row">
         <!-- This div contains title for data grid -->
         <span class="item-col">id</span>
         <span class="item-col">title</span>
@@ -14,7 +14,7 @@
         v-for="(item, index) in currentPageData"
         :key="index"
       >
-      <!-- This div contains data rows -->
+        <!-- This div contains data rows -->
         <span class="item-col">{{ index }}</span>
         <span class="item-col">{{ item.title }}</span>
         <span class="item-col">{{ item.descrip }}</span>
@@ -43,9 +43,9 @@
         style="margin-left: 30%"
         v-if="this.currentPageData.length < this.data.length"
       >
-      <!-- Change to margin as you like. -->
-      <!-- If your current PageData has less data then full data, show page selector -->
-      <!-- If your current page is 1, disable previous button, if your current page is last page, disable next button -->
+        <!-- Change to margin as you like. -->
+        <!-- If your current PageData has less data then full data, show page selector -->
+        <!-- If your current page is 1, disable previous button, if your current page is last page, disable next button -->
         <button
           :class="[
             'pagination-button',
@@ -86,6 +86,7 @@ export default {
   // This data is a dummy object for you to see how it works, you can replace it with your own data.
   data() {
     return {
+      name: 'Paginator',
       data: [
         {
           title: 'Hello W',
@@ -174,18 +175,17 @@ export default {
   },
   methods: {
     getPageCount() {
-      if (this.itemPerPage === 'All') return; 
-      // If itemPerPage is All, return and dont calculate page count. Else calculate page count. It will be integer because we gave it a default value of integer
-      this.pageNumber = this.data.length / Number(this.itemPerPage);
+      if (this.itemPerPage === 'All') return;
+      // If itemPerPage is All, return and dont calculate page count. Else calculate page count.
+      this.pageNumber = Math.ceil(this.data.length / Number(this.itemPerPage));
     },
     changeCurrentPage(val) {
-      if (val === 1) 
-          if (this.currentPage > 1) this.currentPage--;
-      else 
-          if (this.currentPage < this.pageNumber) this.currentPage++;
-// If val is 1, decrease current page, if val is 2, increase current page. And getPageData of currentPage
+      if (val === 1)
+        if (this.currentPage > 1) this.currentPage--;
+        else if (this.currentPage < this.pageNumber) this.currentPage++;
+      // If val is 1, decrease current page, if val is 2, increase current page. And getPageData of currentPage
       this.getPageData(this.currentPage);
-    }, 
+    },
     getPageData(index) {
       if (this.itemPerPage === 'All') {
         this.currentPageData = this.data;
