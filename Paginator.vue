@@ -83,7 +83,7 @@
 
 <script>
 export default {
-  // This data is a null object for you to see how it works, you can replace it with your own data.
+  // This data is a dummy object for you to see how it works, you can replace it with your own data.
   data() {
     return {
       data: [
